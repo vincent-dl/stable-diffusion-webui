@@ -1,0 +1,46 @@
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore virtual environments
+venv/
+env/
+.venv/
+
+# Ignore log files and databases
+*.log
+*.sqlite
+
+# Ignore temporary files and directories
+tmp/
+temp/
+*.tmp
+*.swp
+
+# Ignore git and version control files
+# .git/
+# .gitignore
+# .gitattributes
+
+# Ignore Docker-related files
+Dockerfile
+.dockerignore
+
+# Ignore build output and distribution directories
+build/
+dist/
+*.egg-info
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# model files and outputs folder from stable diffusion
+models/Stable-diffusion
+models/Lora
+outputs

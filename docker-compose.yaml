@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: ./
+    ports:
+      - 7860:7860
+    volumes:
+      - ./models/Stable-diffusion:/app/models/Stable-diffusion
+      - ./outputs:/app/outputs
+    networks:
+      - mynetwork
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    runtime: nvidia
+    command: ["python3", "launch.py", "--api"]
+networks:
+  mynetwork:
+    driver: bridge
