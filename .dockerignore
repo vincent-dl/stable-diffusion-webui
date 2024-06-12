@@ -44,3 +44,4 @@ Thumbs.db
 models/Stable-diffusion
 models/Lora
 outputs
+__pycache__

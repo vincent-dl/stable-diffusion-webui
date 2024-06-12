@@ -39,13 +39,14 @@ def main():
         if not args.skip_prepare_environment:
             prepare_environment()
 
-    # Prepare models from scripts/get_models.py
-    
 
     if args.test_server:
         configure_for_tests()
 
-    start()
+    if args.build_dockerimage:
+        pass
+    else:
+        start()
 
 
 if __name__ == "__main__":

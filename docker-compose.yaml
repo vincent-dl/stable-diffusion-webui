@@ -1,22 +1,28 @@
-version: "3.8"
 services:
   api:
     build:
       context: ./
     ports:
       - 7860:7860
+    container_name: stable-diffusion-api
     volumes:
       - ./models/Stable-diffusion:/app/models/Stable-diffusion
+      - ./models/Lora:/app/models/Lora
+      - ./configs/:/app/configs
       - ./outputs:/app/outputs
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    deploy:
+     resources:
+       reservations:
+         devices:
+           - capabilities: [gpu]
+    runtime: nvidia
     networks:
       - mynetwork
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - capabilities: [gpu]
-    runtime: nvidia
-    command: ["python3", "launch.py", "--api"]
+    command: ["python3", "launch.py"]
+    stdin_open: true
+    tty: true
 networks:
   mynetwork:
     driver: bridge
