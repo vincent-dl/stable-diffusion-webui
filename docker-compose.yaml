@@ -20,7 +20,7 @@ services:
     runtime: nvidia
     networks:
       - mynetwork
-    command: ["python3", "launch.py", "--listen"]
+    command: ["python3", "launch.py", "--listen", "--api"]
     stdin_open: true
     tty: true
 networks:
