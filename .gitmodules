@@ -1,3 +1,6 @@
 [submodule "extensions/sd-webui-controlnet"]
 	path = extensions/sd-webui-controlnet
 	url = https://github.com/Mikubill/sd-webui-controlnet.git
+[submodule "extensions/sd-webui-reactor"]
+	path = extensions/sd-webui-reactor
+	url = https://github.com/Gourieff/sd-webui-reactor.git

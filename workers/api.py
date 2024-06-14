@@ -6,23 +6,6 @@ import time
 import os
 import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--port", default=7860, help="Input file path")
-args = parser.parse_args()
-
-webui_server_url = f"http://127.0.0.1:{args.port}"
-
-image_file = "./tunong.jpg"
-prompt = "<lora:ip-adapter-faceid-plus_sd15_lora:0.7>, <lora:blindbox_v1_mix:0.7>, (masterpiece), (best quality), (ultra-detailed), (full body:1.25), 1boy, chibi, toy figurine, spider man, (beautiful detailed face), (beautiful detailed eyes), standing straight, gym rat, gym background"
-negative_prompt = "(low quality:1.3), (worst quality:1.3)"
-
-out_dir = "api_out"
-out_dir_t2i = os.path.join(out_dir, "txt2img")
-out_dir_i2i = os.path.join(out_dir, "img2img")
-
-os.makedirs(out_dir_t2i, exist_ok=True)
-os.makedirs(out_dir_i2i, exist_ok=True)
-
 
 def timestamp():
     return datetime.fromtimestamp(time.time()).strftime("%Y%m%d-%H%M%S")
@@ -132,19 +115,3 @@ def payloader(
     }
     return payload
 
-
-if __name__ == "__main__":
-    init_images = [
-        encode_file_to_base64(image_file),
-    ]
-
-    prompt = "<lora:ip-adapter-faceid-plus_sd15_lora:0.7>, <lora:blindbox_v1_mix:0.7>, (masterpiece), (best quality), (ultra-detailed), (full body:1.25), 1boy, chibi, toy figurine, spider man, (beautiful detailed face), (beautiful detailed eyes), standing straight, gym rat, gym background"
-    negative_prompt = "(low quality:1.3), (worst quality:1.3)"
-    payload = payloader(
-        image_file=image_file,
-        prompt=prompt,
-        negative_prompt=negative_prompt,
-        batch_size=4,
-    )
-
-    reponse = call_txt2img_api(webui_server_url, **payload)

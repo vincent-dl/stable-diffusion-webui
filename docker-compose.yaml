@@ -2,14 +2,14 @@ services:
   api:
     build:
       context: ./
+    image: automatic1111-stable-diffusion:latest
     ports:
-      - 8000:7860
+      - 7860:7860
     container_name: stable-diffusion-api
     volumes:
-      - ./models/Stable-diffusion:/app/models/Stable-diffusion
-      - ./models/Lora:/app/models/Lora
-      - ./configs/:/app/configs
-      - ./outputs:/app/outputs
+      - ./models/:/stable-diffusion/models
+      - ./configs/:/stable-diffusion/configs
+      - ./outputs:/stable-diffusion/outputs
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
     deploy:
