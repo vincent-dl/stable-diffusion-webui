@@ -59,6 +59,9 @@ python3 workers/main.py
 ## Demo with FaceSwap extension for Age Sliding 
 https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/af2c383a-dfae-4afe-8eb2-bf701d96cec9/width=1800,quality=90/xyz_grid-0011-4193570023.jpeg
 
+First, download this [Lora](https://civitai.com/models/128417?modelVersionId=143150) to `models/Lora`. By default, it will download Stable-Diffusion1.5 to `./models/Stable-diffusion`. If you wanna use another base model such as [Realistic Vision V6.0 B1](https://civitai.com/models/4201/realistic-vision-v60-b1?modelVersionId=125411), download and put it to `./models/Stable-diffusion`.
+
+
 prompt: `asian man, white shirt, grey jacket, black hair, portrait, looking at viewer, forest, hat<lora:age_slider_v20:-1>`
 negative prompt: `nude, breasts, topless, cartoon, cgi, render, illustration, painting, drawing, bad quality, grainy, low resolution`
 Other metadata: Guidance=7, steps=20, sampler=`DPM++ 2M SDE Karras`
