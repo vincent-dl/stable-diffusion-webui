@@ -1,8 +1,6 @@
 services:
   api:
-    build:
-      context: ./
-    image: automatic1111-stable-diffusion:latest
+    image: stable-diffusion-api:latest
     ports:
       - 7860:7860
     container_name: stable-diffusion-api

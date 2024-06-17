@@ -23,9 +23,11 @@ Then, run this image, and mount it with the `data`, `models\Stable-diffusion`, `
 
 ```bash
 docker run --rm --gpus all -it \
- -v models/Stable-diffusion:/stable-diffusion/models/Stable-diffusion \
- -v models/Lora:/stable-diffusion/models/Lora \
- stable-diffusion-api:latest bash
+ -v models:/stable-diffusion/models \
+ -v ./configs/:/stable-diffusion/configs \
+ -v /outputs:/stable-diffusion/outputs \
+ stable-diffusion-api:latest \
+ python3 /stable-diffusion/launch.py --listen --api
 ```
 
 #### Use with docker compose

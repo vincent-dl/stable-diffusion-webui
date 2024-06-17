@@ -1,5 +1,4 @@
 from modules import launch_utils
-# from scripts import get_models
 
 args = launch_utils.args
 python = launch_utils.python
