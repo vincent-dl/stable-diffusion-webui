@@ -41,7 +41,7 @@ dist/
 Thumbs.db
 
 # model files and outputs folder from stable diffusion
-models/Stable-diffusion
-models/Lora
+models/
+models/
 outputs
 __pycache__
