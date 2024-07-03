@@ -1,6 +1,6 @@
 services:
   api:
-    image: stable-diffusion-api:latest
+    build: .
     ports:
       - 7860:7860
     container_name: stable-diffusion-api
@@ -10,7 +10,6 @@ services:
       - ./outputs:/stable-diffusion/outputs
       - ./extensions:/stable-diffusion/extensions
       - ./modules/:/stable-diffusion/modules
-      - ./get_models.sh:/stable-diffusion/get_models.sh:ro
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
     deploy:
