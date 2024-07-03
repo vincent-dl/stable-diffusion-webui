@@ -8,6 +8,9 @@ services:
       - ./models/:/stable-diffusion/models
       - ./configs/:/stable-diffusion/configs
       - ./outputs:/stable-diffusion/outputs
+      - ./extensions:/stable-diffusion/extensions
+      - ./modules/:/stable-diffusion/modules
+      - ./get_models.sh:/stable-diffusion/get_models.sh:ro
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
     deploy:
