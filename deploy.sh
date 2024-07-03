@@ -1,4 +1,5 @@
 #/bin/bash
+# To run this file, you must use bash deploy.sh, not sh deploy.sh
 
 DOCKERFILE=Dockerfile
 IMAGE_NAME=stable-diffusion-api:latest
@@ -11,6 +12,7 @@ else
 fi
 
 echo "Dowloading models from get_models.sh. If you wanna add more models, just put links in file and then re-run the deploy.sh command or you can just run sh get_models.sh seperately."
+
 sh get_models.sh
 
 echo "running docker compose up for deploy"
