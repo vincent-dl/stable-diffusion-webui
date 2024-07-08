@@ -8,4 +8,4 @@ echo "Dowloading models from get_models.sh. If you wanna add more models, just p
 sh get_models.sh
 
 echo "running docker compose up for deploy"
-docker compose up --force-recreate
+docker compose up --force-recreate -d
