@@ -72,6 +72,12 @@ Base model: can be Photon, SDXL, Realistic Vision V6.0 B1
 
 If you wanna change age, the working range (age_slider_range) for the Lora is from -5 to +5, this parameter is placed after the `<lora:age_slider_v20:age_slider_range>`. -5 is the youngest (`<lora:age_slider_v20:-5>`), and 5 is the oldest (`<lora:age_slider_v20:5>`).
 
+# Example Usage
+## Anieme - Style Conversion
+negative prompt:
+```
+3d, cartoon, anime, sketches, (worst quality, bad quality, child, cropped:1.4) (monochrome)), (grayscale)), (bad-hands-5:1.0), (badhandv4:1.0), (EasyNegative:0.8), (bad-artist-anime:0.8), (bad-artist:0.8), (bad_prompt:0.8), (bad-picture-chill-75v:0.8), (bad_prompt_version2:0.8), (bad_quality:0.8)
+```
 
 ## Contacts
 Vu Le, University of Massachusetts Amherst at vdle@umass.edu
