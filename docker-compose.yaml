@@ -1,6 +1,6 @@
 services:
   api:
-    build: .
+    image: stable-diffusion-api:latest
     ports:
       - 7860:7860
     container_name: stable-diffusion-api
@@ -8,7 +8,6 @@ services:
       - ./models/:/stable-diffusion/models
       - ./configs/:/stable-diffusion/configs
       - ./outputs:/stable-diffusion/outputs
-      - ./extensions:/stable-diffusion/extensions
       - ./modules/:/stable-diffusion/modules
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
@@ -20,7 +19,7 @@ services:
     runtime: nvidia
     networks:
       - mynetwork
-    command: ["python3", "launch.py", "--listen", "--api"]
+    command: ["python3", "launch.py", "--listen", "--api", "--share"]
     stdin_open: true
     tty: true
 networks:

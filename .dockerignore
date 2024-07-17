@@ -26,6 +26,8 @@ temp/
 # .git/
 # .gitignore
 # .gitattributes
+# .gitmodules
+.github
 
 # Ignore Docker-related files
 Dockerfile
@@ -45,4 +47,4 @@ models/
 models/
 outputs
 __pycache__
-extensions
+# extensions
