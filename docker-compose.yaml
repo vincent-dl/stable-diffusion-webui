@@ -12,6 +12,7 @@ services:
       - ./modules/:/stable-diffusion/modules
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
+      - GIT_SAFE_DIRECTORY=/stable-diffusion/extensions/sd-webui-controlnet
     deploy:
      resources:
        reservations:

@@ -23,9 +23,11 @@ temp/
 *.swp
 
 # Ignore git and version control files
-# .git/
-# .gitignore
-# .gitattributes
+.git/
+.gitignore
+.gitattributes
+.gitmodules
+.github
 
 # Ignore Docker-related files
 Dockerfile
