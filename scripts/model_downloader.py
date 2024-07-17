@@ -118,26 +118,29 @@ sd_model_list = [
     ),
 ]
 
+RED = "\033[31m"
+RESET = "\033[0m"
+
 for remake_lora in remake_lora_list:
     try:
         model_downloader(remake_lora[0], remake_lora[1], remake_lora[2])
     except Exception as e:
-        print(e)
+        print(f"{RED} {e} {RESET}")
 
 for controlnet_model in controlnet_model_list:
     try:
         model_downloader(controlnet_model[0], controlnet_model[1], controlnet_model[2])
     except Exception as e:
-        print(e)
+        print(f"{RED} {e} {RESET}")
 
 for age_sliding_lora in age_sliding_lora_list:
     try:
         model_downloader(age_sliding_lora[0], controlnet_model[1], controlnet_model[2])
     except Exception as e:
-        print(e)
+        print(f"{RED} {e} {RESET}")
 
 for sd_model in sd_model_list:
     try:
         model_downloader(sd_model[0], sd_model[1], sd_model[2])
     except Exception as e:
-        print(e)
+        print(f"{RED} {e} {RESET}")
