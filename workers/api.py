@@ -4,12 +4,12 @@ import base64
 import json
 import time
 import os
-import requests
 
 
 class StableDiffusionAPIClient:
     def __init__(self, server_url="http://localhost:7860", output_dir="outputs"):
         self.server_url = server_url
+        self.output_dir = output_dir
         self.seed = -1  # random seed
         self.steps = 30  # steps for running SD
         self.height = 512
@@ -19,7 +19,7 @@ class StableDiffusionAPIClient:
         self.scheduler = "karras"
         self.n_iter = 1
         self.batch_size = 1
-        self.out_dir_t2i = os.path.join(self.out_dir, "txt2img")
+        self.out_dir_t2i = os.path.join(self.output_dir, "txt2img")
         os.makedirs(self.out_dir_t2i, exist_ok=True)
 
         # Here we define a list of loras, and model for different applications
