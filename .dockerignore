@@ -23,10 +23,10 @@ temp/
 *.swp
 
 # Ignore git and version control files
-.git/
-.gitignore
-.gitattributes
-.gitmodules
+# .git/
+# .gitignore
+# .gitattributes
+# .gitmodules
 .github
 
 # Ignore Docker-related files
@@ -47,4 +47,4 @@ models/
 models/
 outputs
 __pycache__
-extensions
+# extensions

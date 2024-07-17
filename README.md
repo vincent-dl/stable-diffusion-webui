@@ -50,12 +50,18 @@ To use different models, and Lora with this docker image, download your correspo
 
 The results folder when you run the docker container are located in `outputs`
 
+### Download models
+You can edit the `get_models.sh` to download models every time you deploy on a new server. In addition, you can also use the `download.py` script to download models from civit.ai. Simply run:
+```bash
+./download.py civit_ai_https_url local_folder
+```
+
 ### Python API
 
 After that, you can test the backend server by running the sample [python api scripts](./python_scripts/api.py). However, you should keep in mind that, the first run may be slow because the server needs to download some more dependecies such as missing models. Make sure you update the URL endpoint and other parameters such as models, Lora, prompt, and image
 
 ```bash
-python3 workers/main.py
+python3 api_example.py
 ```
 
 ## Demo with FaceSwap extension for Age Sliding 
@@ -75,7 +81,7 @@ If you wanna change age, the working range (age_slider_range) for the Lora is fr
 # Example Usage
 ## Anieme - Style Conversion
 negative prompt:
-```
+```bash
 3d, cartoon, anime, sketches, (worst quality, bad quality, child, cropped:1.4) (monochrome)), (grayscale)), (bad-hands-5:1.0), (badhandv4:1.0), (EasyNegative:0.8), (bad-artist-anime:0.8), (bad-artist:0.8), (bad_prompt:0.8), (bad-picture-chill-75v:0.8), (bad_prompt_version2:0.8), (bad_quality:0.8)
 ```
 
