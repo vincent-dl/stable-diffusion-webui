@@ -73,7 +73,7 @@ class StableDiffusionAPIClient:
         denoising_strength=0.75,
         cfg_scale=7,
         sampler_name="DPM++ 2M",
-        scheduler="karras",  # option exponential
+        scheduler="Karras",  # option exponential
         n_iter=1,
         batch_size=1,
         sd_model_checkpoint="realisticVisionV60B1_v60B1VAE.safetensors",  # start from there for controlnet
@@ -87,13 +87,16 @@ class StableDiffusionAPIClient:
         # lora range should be from 0->1.
 
         prompt = (
-            prompt
-            + f"<lora:ip-adapter-faceid-plus_sd15_lora:{lora_range}>, portrait photo of a {age}yo {gender}"
+            f"<lora:ip-adapter-faceid-plus_sd15_lora:{lora_range}>, portrait photo of a {age}yo {gender}, "
+            + prompt
         )
+
         negative_prompt = (
-            negative_prompt
-            + "cropped, frame, text, deformed, glitch, noise, noisy, off-center, cross-eyed, closed eyes, bad anatomy, ugly, disfigured, sloppy, duplicate, mutated, black and white, 3D render, comics, signature, words, bad proportions, blurry, extra arms, extra legs, jpeg artifacts, low quality, lowres, malformed limbs, mutilated, distorted, cloned face, dehydrated, error, fused fingers, gross proportions, long neck, missing arms, missing legs, morbid, mutation, out of frame, poorly drawn face, poorly drawn hands, too many fingers, username, watermark, worst quality, unprofessional, cluttered, unappealing, pixelated"
+            "cropped, frame, text, deformed, glitch, noise, noisy, off-center, cross-eyed, closed eyes, bad anatomy, ugly, disfigured, sloppy, duplicate, mutated, black and white, 3D render, comics, signature, words, bad proportions, blurry, extra arms, extra legs, jpeg artifacts, low quality, lowres, malformed limbs, mutilated, distorted, cloned face, dehydrated, error, fused fingers, gross proportions, long neck, missing arms, missing legs, morbid, mutation, out of frame, poorly drawn face, poorly drawn hands, too many fingers, username, watermark, worst quality, unprofessional, cluttered, unappealing, pixelated, "
+            + negative_prompt
         )
+        print(prompt)
+        print(negative_prompt)
         payload = {
             "prompt": prompt,  # extra networks also in prompts
             "negative_prompt": negative_prompt,
