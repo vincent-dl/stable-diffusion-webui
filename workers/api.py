@@ -159,7 +159,7 @@ class StableDiffusionAPIClient:
         denoising_strength=0.75,
         cfg_scale=7,
         sampler_name="DPM++ 2M",
-        scheduler="karras",  # option exponential
+        scheduler="Karras",  # option exponential
         n_iter=1,
         batch_size=1,
         sd_model_checkpoint="revAnimated_v122EOL.safetensors",  # start from there for controlnet
